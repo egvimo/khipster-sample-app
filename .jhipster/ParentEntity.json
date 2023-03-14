@@ -1,0 +1,31 @@
+{
+  "applications": ["sample"],
+  "changelogDate": "20230314070422",
+  "clientRootFolder": "sample",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "parent_entity",
+  "fields": [
+    {
+      "fieldName": "parentRequiredField",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "sample",
+  "name": "ParentEntity",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "childEntity",
+      "otherEntityRelationshipName": "parent",
+      "relationshipName": "child",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

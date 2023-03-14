@@ -18,9 +18,21 @@ application {
     skipUserManagement true
   }
   entities *
+  dto * with mapstruct
 }
 
-entity Abc0 {
-    @Id key String
-    otherField String
+entity ParentEntity {
+  parentRequiredField String required
+}
+
+entity ChildEntity {
+  childField String
+}
+
+relationship ManyToOne {
+  ChildEntity{user(login) required} to User
+}
+
+relationship OneToMany {
+  ParentEntity{child} to ChildEntity{parent(parentRequiredField) required}
 }
